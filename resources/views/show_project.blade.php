@@ -16,8 +16,10 @@
             </div>
 
             <div class="card-footer">
+                @if (auth()->user()->role==0)
                 <a href="{{ route('master_p.edit', $item->id)  }}" class="btn btn-sm btn-warning btn-circle"><i class="fas fa-edit"></i></a>
                 <a href="{{ route('master_p.hapus', $item->id)  }}" class="btn btn-sm btn-danger btn-circle"><i class="fas fa-trash"></i></a>
+                @endif
             </div>
         </div>
     @endforeach

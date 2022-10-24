@@ -1,9 +1,9 @@
 @extends('admin')
  
-@section('title', 'Tambah Kontak')
-@section('content-title', 'Tambah Kontak - '.$siswa->nama)
+@section('title', 'Tambah Jenis Kontak')
+@section('content-title', 'Tambah Jenis Kontak')
 @section('content')
-    <h1>Halaman Tambah Kontak</h1>
+<h1>Halaman Tambah Jenis Kontak</h1>
     <div class="row">
         <div class="col-lg-12">
             <div class="card shadow mb-4">
@@ -18,23 +18,11 @@
                             </ul>
                         </div>
                     @endif
-                    <form method="post" action="{{ route('master_k.store') }}" enctype="multipart/form-data">
+                    <form method="post" action="{{ route('jkontak.store') }}" enctype="multipart/form-data">
                         @csrf
-                        <input type="hidden" name="id_siswa" value="{{ $siswa->id }}">
                         <div class="form-group">
-                            {{-- {{ dd($kontak->id) }}  --}}
                             <label for="jenis_kontak">Jenis Kontak</label>
-                            <div class="input-group mb-3">
-                                <select class="custom-select" id="jenis_kontak" name="jenis_kontak">
-                                    @foreach ($j_kontak as $kontak) 
-                                  <option value="{{ $kontak->id }}">{{ $kontak->jenis_kontak }}</option>
-                                  @endforeach
-                                </select>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label for="deskripsi">Deskripsi</label>
-                            <input type="text" class="form-control" id="deskripsi" name='deskripsi' value="{{ old('deskripsi') }}">
+                            <input type="text" class="form-control" id="jenis_kontak" name='jenis_kontak' value="{{ old('jenis_kontak') }}">
                         </div>
                         <div class="form-group">
                             {{-- <a href="submit" class="btn btn-success">Simpan</a> --}}

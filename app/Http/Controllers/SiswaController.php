@@ -51,7 +51,7 @@ class SiswaController extends Controller
         ];
 
         $this->validate($request, [
-            'nama' => 'required|min:7|max:30',
+            'nama' => 'required|min:1|max:30',
             'nisn' => 'required|numeric',
             'alamat' => 'required',
             'jk' => 'required',
@@ -129,7 +129,7 @@ class SiswaController extends Controller
         ];
 
         $this->validate($request, [
-            'nama' => 'required|min:7|max:30',
+            'nama' => 'required|min:1|max:30',
             'nisn' => 'required|numeric',
             'alamat' => 'required',
             'jk' => 'required',

@@ -14,9 +14,11 @@
         <div class="col-lg-12">
             <div class="card shadow mb-4">
                 <div class="card-header py-3">
-                    <a href="{{ route('master_s.create')  }}" class="btn btn-success">tambah data</a>
+                    @if (auth()->user()->role==0)
+                    <a href="{{ route('master_s.create')  }}" class="btn btn-outline-success">tambah data</a>
+                    @endif
                 </div>
-                <div class="card-body">
+                <div class="card-body text-center">
                     <table class="table">
                         <thead>
                             <tr>
@@ -36,8 +38,10 @@
                                     <td>{{ $d->alamat }}</td>
                                     <td>
                                         <a href="{{ route('master_s.show', $d->id)  }}" class="btn btn-sm btn-info btn-circle"><i class="fas fa-info"></i></a>
+                                        @if (auth()->user()->role==0)
                                         <a href="{{ route('master_s.edit', $d->id)  }}" class="btn btn-sm btn-warning btn-circle"><i class="fas fa-edit"></i></a>
                                         <a href="{{ route('master_s.hapus', $d->id)  }}" class="btn btn-sm btn-danger btn-circle"><i class="fas fa-trash"></i></a>
+                                        @endif
                                     </td>
                                 </tr>
                             @endforeach

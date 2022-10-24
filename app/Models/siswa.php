@@ -18,13 +18,15 @@ class siswa extends Model
     ];
     protected $table = 'siswa';
 
-    public function kontak(){
-        return $this->belongsToMany('App\Models\jenis_kontak')->withPivot('deskripsi');
+    public function kontak()
+    {
+        return $this->belongsToMany('App\Models\jenis_kontak')->withPivot('id', 'deskripsi');
     }
     // public function kontak(){
     //     return $this->hasMany('app\models\kontak', 'id');
     // }
-    public function project(){
+    public function project()
+    {
         return $this->hasMany('App\Models\project', 'id_siswa');
     }
 }

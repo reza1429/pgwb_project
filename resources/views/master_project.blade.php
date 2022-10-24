@@ -15,7 +15,7 @@
      <div class="card-header">
        <h6 class="m-0 font-weight-bold text-primary"><i class="  "></i>  Kontak Siswa</h6>
      </div>
-        <div class="card-body">
+        <div class="card-body text-center">
         <table class="table">
                  <thead>
                      <tr>                 
@@ -30,7 +30,9 @@
                      <td> {{ $item->nama }} </td>
                      <td class="text-center">
                          <a onclick="show({{ $item->id }})" class="btn btn-sm btn-info btn-circle"><i class="fas fa-folder-open"> </i></a>
+                         @if (auth()->user()->role==0)
                          <a href="{{ route('master_p.create', $item->id)   }}" class="btn btn-sm btn-success btn-circle"><i class="fas fa-plus"> </i></a>   
+                         @endif
                      </td>
                  </tr>
                  @endforeach
