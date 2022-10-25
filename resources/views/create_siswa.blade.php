@@ -35,6 +35,7 @@
                         <div class="form-group">
                             <label for="jk">Jenis Kelamin</label>
                             <select class="form-select form-control" name="jk" id="jk">
+                                <option selected disabled>Pilih Jenis Kelamin</option>
                                 <option value="lakilaki">Laki-Laki</option>
                                 <option value="perempuan">Perempuan</option>
                             </select>

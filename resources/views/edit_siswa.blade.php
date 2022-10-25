@@ -35,6 +35,7 @@
                         <div class="form-group">
                             <label for="jk">Jenis Kelamin</label>
                             <select class="form-select form-control" name="jk" id="jk">
+                                <option selected disabled>Pilih Jenis Kelamin</option>
                                 <option value="lakilaki"@if($siswa->jk == 'laki-laki')selected @endif>Laki-Laki</option>
                                 <option value="perempuan"@if($siswa->jk == 'perempuan')selected @endif>Perempuan</option>
                             </select>
