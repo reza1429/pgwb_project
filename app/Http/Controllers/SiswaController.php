@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\siswa;
 use App\Models\kontak;
+use App\Models\jenis_kontak;
+use App\Models\project;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\File;
@@ -90,9 +92,11 @@ class SiswaController extends Controller
     public function show($id)
     {
         $siswa = siswa::find($id);
-        $kontaks = $siswa->kontak()->get();
+        // $kontak = $siswa->kontak()->get();
+        $kontak = siswa::find($id)->kontak()->get();
+        $project = siswa::find($id)->project()->get();
         // return($kontak);
-        return view('show_siswa', compact('siswa', 'kontaks'));
+        return view('show_siswa', compact('siswa', 'kontak', 'project'));
         //
     }
 
